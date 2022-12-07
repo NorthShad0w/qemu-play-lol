@@ -14,7 +14,9 @@ sudo dnf install libseccomp-devel nettle-devel libattr-devel libjpeg-devel \
                  libuuid-devel pulseaudio-libs-devel curl-devel libssh-devel \
                  systemtap-sdt-devel libusbx-devel xen-devel
                  
-                 spice-protocol spice-server-devel systemd-devel usbredir-devel
+                 spice-protocol spice-server-devel systemd-devel usbredir-devel iasl gnutls-devel SDL_image-devel git-email clang-devel bluez-libs-devel \
+                 libcap-devel libglibutil-devel pam-devel virglrenderer-devel librbd-devel mesa-libgbm-devel \
+                 libnfs-devel libzstd-devel numactl-devel
 ```
 
 ```
