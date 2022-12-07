@@ -18,6 +18,8 @@ sudo dnf install libseccomp-devel nettle-devel libattr-devel libjpeg-devel \
                  libcap-devel libglibutil-devel pam-devel virglrenderer-devel librbd-devel mesa-libgbm-devel \
                  libnfs-devel libzstd-devel numactl-devel
 ```
+TODO add support to bypass rdtsc vm exit check      Maybe when I have time 
+
 
 ```
 git clone https://gitlab.com/qemu-project/qemu/ -b v7.0.0 --depth 1 --recursive
@@ -26,8 +28,8 @@ git apply qemu7.0.0.patch
 cd ..
 mkdir qemu_build
 cd qemu_build
-sudo ../qemu/configure --target-list=x86_64-softmmu,x86_64-linux-user --prefix=/usr
-sudo make
+../qemu/configure --target-list=x86_64-softmmu,x86_64-linux-user --prefix=/usr
+make
 sudo make install
 ```
 
