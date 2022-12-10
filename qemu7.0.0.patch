@@ -33,7 +33,7 @@ index eb9231d..dd4d5d9 100644
  
  static QemuInputHandler msmouse_handler = {
 -    .name  = "QEMU Microsoft Mouse",
-+    .name  = "ASUS Microsoft Mouse",
++    .name  = "ASUS NGOgaming Mouse",
      .mask  = INPUT_EVENT_MASK_BTN | INPUT_EVENT_MASK_REL,
      .event = msmouse_input_event,
      .sync  = msmouse_input_sync,
@@ -59,7 +59,7 @@ index bfb8d93..b132986 100644
      QTAILQ_INIT(&g.fenceq);
  
 -    context = g_option_context_new("QEMU vhost-user-gpu");
-+    context = g_option_context_new("ASUS vhost-user-gpu");
++    context = g_option_context_new("Nvidia for-user-gpu");
      g_option_context_add_main_entries(context, entries, NULL);
      if (!g_option_context_parse(context, &argc, &argv, &error)) {
          g_printerr("Option parsing failed: %s\n", error->message);
@@ -127,7 +127,7 @@ index 2387401..6ac20e4 100644
  
      mc->init = sbsa_ref_init;
 -    mc->desc = "QEMU 'SBSA Reference' ARM Virtual Machine";
-+    mc->desc = "ASUS 'SBSA Reference' ARM Virtual Machine";
++    mc->desc = "ASUS 'SBSA Reference' ARM NGOgame Machine";
      mc->default_cpu_type = ARM_CPU_TYPE_NAME("cortex-a57");
      mc->max_cpus = 512;
      mc->pci_allow_0_address = true;
@@ -140,11 +140,11 @@ index d2e5ecd..3e91007 100644
      uint8_t *smbios_tables, *smbios_anchor;
      size_t smbios_tables_len, smbios_anchor_len;
 -    const char *product = "QEMU Virtual Machine";
-+    const char *product = "ASUS Real Machine";
++    const char *product = "ASUS NGOgame Machine";
  
      if (kvm_enabled()) {
 -        product = "KVM Virtual Machine";
-+        product = "ASUS Real Machine";
++        product = "ASUS NGOgame Machine";
      }
  
 -    smbios_set_defaults("QEMU", product,
@@ -174,7 +174,7 @@ index 8755d8d..8b20952 100644
      if (s->chn[0].type == escc_mouse) {
          qemu_add_mouse_event_handler(sunmouse_event, &s->chn[0], 0,
 -                                     "QEMU Sun Mouse");
-+                                     "ASUS Sun Mouse");
++                                     "ASUS gam Mouse");
      }
      if (s->chn[1].type == escc_kbd) {
          s->chn[1].hs = qemu_input_handler_register((DeviceState *)(&s->chn[1]),
@@ -293,7 +293,7 @@ index 3a5afff..9f2e885 100644
              break;
          default:
 -            strcpy(s->drive_model_str, "QEMU HARDDISK");
-+            strcpy(s->drive_model_str, "ASUS HARDDISK");
++            strcpy(s->drive_model_str, "Samsung SSD 980 PRO");
              break;
          }
      }
@@ -306,7 +306,7 @@ index a9088c9..336077a 100644
  
  static QemuInputHandler adb_keyboard_handler = {
 -    .name  = "QEMU ADB Keyboard",
-+    .name  = "ASUS ADB Keyboard",
++    .name  = "Logi ADB Keyboard",
      .mask  = INPUT_EVENT_MASK_KEY,
      .event = adb_keyboard_event,
  };
@@ -319,7 +319,7 @@ index e6b341f..36155df 100644
      amc->parent_realize(dev, errp);
  
 -    qemu_add_mouse_event_handler(adb_mouse_event, s, 0, "QEMU ADB Mouse");
-+    qemu_add_mouse_event_handler(adb_mouse_event, s, 0, "ASUS ADB Mouse");
++    qemu_add_mouse_event_handler(adb_mouse_event, s, 0, "Logi ADB Mouse");
  }
  
  static void adb_mouse_initfn(Object *obj)
@@ -345,14 +345,14 @@ index e7ecebd..f4e991c 100644
  
  static QemuInputHandler hid_keyboard_handler = {
 -    .name  = "QEMU HID Keyboard",
-+    .name  = "ASUS HID Keyboard",
++    .name  = "Logi HID Keyboard",
      .mask  = INPUT_EVENT_MASK_KEY,
      .event = hid_keyboard_event,
  };
  
  static QemuInputHandler hid_mouse_handler = {
 -    .name  = "QEMU HID Mouse",
-+    .name  = "ASUS HID Mouse",
++    .name  = "Logi HID Mouse",
      .mask  = INPUT_EVENT_MASK_BTN | INPUT_EVENT_MASK_REL,
      .event = hid_pointer_event,
      .sync  = hid_pointer_sync,
@@ -360,7 +360,7 @@ index e7ecebd..f4e991c 100644
  
  static QemuInputHandler hid_tablet_handler = {
 -    .name  = "QEMU HID Tablet",
-+    .name  = "ASUS HID Tablet",
++    .name  = "Logi HID Tablet",
      .mask  = INPUT_EVENT_MASK_BTN | INPUT_EVENT_MASK_ABS,
      .event = hid_pointer_event,
      .sync  = hid_pointer_sync,
@@ -373,7 +373,7 @@ index c16df1d..6eaf04b 100644
  
  static QemuInputHandler ps2_keyboard_handler = {
 -    .name  = "QEMU PS/2 Keyboard",
-+    .name  = "ASUS PS/2 Keyboard",
++    .name  = "Logi PS/2 Keyboard",
      .mask  = INPUT_EVENT_MASK_KEY,
      .event = ps2_keyboard_event,
  };
@@ -382,7 +382,7 @@ index c16df1d..6eaf04b 100644
  
  static QemuInputHandler ps2_mouse_handler = {
 -    .name  = "QEMU PS/2 Mouse",
-+    .name  = "ASUS PS/2 Mouse",
++    .name  = "Logi PS/2 Mouse",
      .mask  = INPUT_EVENT_MASK_BTN | INPUT_EVENT_MASK_REL,
      .event = ps2_mouse_event,
      .sync  = ps2_mouse_sync,
@@ -521,7 +521,7 @@ index 19d01f3..974e0ae 100644
 -                              "0000111122223333");
 +                              "ASUS MPT Fusion",
 +                              "ASUS",
-+                              "1145141919810000");
++                              "8767364739298822");
  }
  
  static
@@ -558,7 +558,7 @@ index 072686e..ecfb9e8 100644
      s->qdev.type = TYPE_DISK;
      if (!s->product) {
 -        s->product = g_strdup("QEMU HARDDISK");
-+        s->product = g_strdup("ASUS HARDDISK");
++        s->product = g_strdup("Samsung SSD 980 PRO");
      }
      scsi_realize(&s->qdev, errp);
  out:
@@ -669,7 +669,7 @@ index e35813d..1f415ca 100644
 -    [STR_SERIALNUMBER] = "314159",
 +    [STR_MANUFACTURER] = "ASUS",
 +    [STR_PRODUCT]      = "ASUS USB Hub",
-+    [STR_SERIALNUMBER] = "114514",
++    [STR_SERIALNUMBER] = "41878459798C",
  };
  
  static const USBDescIface desc_iface_hub = {
@@ -725,7 +725,7 @@ index 6c49c16..93c2610 100644
 -    [STRING_RNDIS]              = "QEMU USB Net RNDIS",
 +    [STRING_MANUFACTURER]       = "ASUS",
 +    [STRING_PRODUCT]            = "RNDIS/ASUS USB Network Device",
-+    [STRING_ETHADDR]            = "400114514405",
++    [STRING_ETHADDR]            = "500456453045",
 +    [STRING_DATA]               = "ASUS USB Net Data Interface",
 +    [STRING_CONTROL]            = "ASUS USB Net Control Interface",
 +    [STRING_RNDIS_CONTROL]      = "ASUS USB Net RNDIS Control Interface",
@@ -1165,7 +1165,7 @@ index aab9c47..38c1e31 100644
              sysib.sysib_322.vm[0].caf = cpu_to_be32(1000);
              /* Linux kernel uses this to distinguish us from z/VM */
 -            ebcdic_put(sysib.sysib_322.vm[0].cpi, "KVM/Linux       ", 16);
-+            ebcdic_put(sysib.sysib_322.vm[0].cpi, "ASUS/Linux      ", 16);
++            ebcdic_put(sysib.sysib_322.vm[0].cpi, "ASUS/REAL      ", 16);
              sysib.sysib_322.vm[0].ext_name_encoding = 2; /* UTF-8 */
  
              /* If our VM has a name, use the real name */
