@@ -20,6 +20,11 @@ sudo dnf install libseccomp-devel nettle-devel libattr-devel libjpeg-devel \
 ```
 TODO add support to bypass rdtsc vm exit check      Maybe when I have time 
 
+正则
+```regx
+=.*".*qemu.*"|.*\(.*".*qemu.*".*\)
+```
+
 
 ```
 git clone https://gitlab.com/qemu-project/qemu/ -b v7.0.0 --depth 1 --recursive
